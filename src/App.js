@@ -33,6 +33,9 @@ function App() {
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
+
+  console.log("qwerty");
+  console.log(movies);
   return (
     <>
       <header>
