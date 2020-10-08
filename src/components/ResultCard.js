@@ -3,10 +3,22 @@ import { IMAGE_API_200 } from "../constants/urls";
 import { GlobalContext } from "../context/GlobalState";
 
 export const ResultCard = ({ movie }) => {
-  const { addMovieToWatchList, watchList } = useContext(GlobalContext);
+  const {
+    addMovieToWatchList,
+    watchList,
+    watched,
+    addMovieToWatched,
+  } = useContext(GlobalContext);
   let storedMovie = watchList.find((data) => data.id === movie.id);
+  let storedMovieWatched = watched.find((data) => data.id === movie.id);
 
-  const watchListDisabled = storedMovie ? true : false;
+  const watchListDisabled = storedMovie
+    ? true
+    : storedMovieWatched
+    ? true
+    : false;
+  const watchedDisabled = storedMovieWatched ? true : false;
+
   return (
     <div className="result-card">
       <div className="poster-wrapper">
@@ -32,6 +44,15 @@ export const ResultCard = ({ movie }) => {
             }}
           >
             Add to Watch List
+          </button>
+          <button
+            className="btn"
+            disabled={watchedDisabled}
+            onClick={() => {
+              addMovieToWatched(movie);
+            }}
+          >
+            Add to Watched
           </button>
         </div>
       </div>
