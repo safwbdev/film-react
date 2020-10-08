@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IMAGE_API_200 } from "../constants/urls";
+import { GlobalContext } from "../context/GlobalState";
 
 export const ResultCard = ({ movie }) => {
+  const { addMovieToWatchList, watchList } = useContext(GlobalContext);
+  let storedMovie = watchList.find((data) => data.id === movie.id);
+
+  const watchListDisabled = storedMovie ? true : false;
   return (
     <div className="result-card">
       <div className="poster-wrapper">
@@ -19,7 +24,15 @@ export const ResultCard = ({ movie }) => {
           </h4>
         </div>
         <div className="controls">
-          <button className="btn">Add to Watch List</button>
+          <button
+            className="btn"
+            disabled={watchListDisabled}
+            onClick={() => {
+              addMovieToWatchList(movie);
+            }}
+          >
+            Add to Watch List
+          </button>
         </div>
       </div>
     </div>

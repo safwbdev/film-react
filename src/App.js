@@ -8,7 +8,7 @@ import { Header } from "./components/Header";
 import { WatchList } from "./components/WatchList";
 import { Watched } from "./components/Watched";
 import { Add } from "./components/Add";
-
+import { GlobalContext, GlobalProvider } from "./context/GlobalState";
 // const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1`;
 // const SEARCH_API = `https://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=`;
 
@@ -60,20 +60,22 @@ function App() {
     //       })}
     //   </div>
     // </>
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <WatchList />
-        </Route>
-        <Route exact path="/watched">
-          <Watched />
-        </Route>
-        <Route exact path="/add">
-          <Add />
-        </Route>
-      </Switch>
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <WatchList />
+          </Route>
+          <Route exact path="/watched">
+            <Watched />
+          </Route>
+          <Route exact path="/add">
+            <Add />
+          </Route>
+        </Switch>
+      </Router>
+    </GlobalProvider>
   );
 }
 
