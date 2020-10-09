@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { IMAGE_API_200 } from "../constants/urls";
 import { GlobalContext } from "../context/GlobalState";
+import { ADD_WATCHLIST, ADD_WATCHED } from "../constants/lang";
 
 export const ResultCard = ({ movie }) => {
   const {
@@ -43,7 +44,7 @@ export const ResultCard = ({ movie }) => {
               addMovieToWatchList(movie);
             }}
           >
-            Add to Watch List
+            {ADD_WATCHLIST}
           </button>
           <button
             className="btn"
@@ -52,7 +53,7 @@ export const ResultCard = ({ movie }) => {
               addMovieToWatched(movie);
             }}
           >
-            Add to Watched
+            {ADD_WATCHED}
           </button>
         </div>
       </div>

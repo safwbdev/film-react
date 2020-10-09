@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { API_KEY } from "../constants/api";
 import { ResultCard } from "./ResultCard";
+import { SEARCH_PLACEHOLDER } from "../constants/lang";
 
 export const Add = () => {
   const [query, setQuery] = useState("");
@@ -30,7 +31,7 @@ export const Add = () => {
           <div className="input-wrapper">
             <input
               type="text"
-              placeholder="Search movie"
+              placeholder={SEARCH_PLACEHOLDER}
               value={query}
               onChange={onChange}
             />

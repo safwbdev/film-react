@@ -1,2 +1,12 @@
-export const SEARCH_PLACEHOLDER = "Search...";
-export const MOVIE_OVERVIEW = "Overview";
+export const SEARCH_PLACEHOLDER = "Search Movie";
+export const HEADER_TITLE = "WatchList";
+export const HEADER_WATCHLIST = "Watch List";
+export const HEADER_WATCHED = "Watched";
+export const HEADER_ADD = "+ Add";
+export const ADD_WATCHLIST = "Add to Watch List";
+export const ADD_WATCHED = "Add to Watched";
+export const WATCHED_TITLE = "Watched";
+export const WATCHLIST_TITLE = "My Watch List";
+export const NO_MOVIES = "No Movies In Your List";
+export const MOVIE = "Movie";
+export const MOVIES = "Movies";
