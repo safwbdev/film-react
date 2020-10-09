@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { API_KEY } from "../constants/api";
 import { ResultCard } from "./ResultCard";
 import { SEARCH_PLACEHOLDER } from "../constants/lang";
+import { SEARCH_URL } from "../constants/urls";
 
-export const Add = () => {
+export const Search = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -12,9 +12,7 @@ export const Add = () => {
 
     setQuery(e.target.value);
 
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
-    )
+    fetch(SEARCH_URL + e.target.value)
       .then((res) => res.json())
       .then((data) => {
         if (!data.errors) {

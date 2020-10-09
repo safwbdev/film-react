@@ -4,8 +4,9 @@ import {
   HEADER_TITLE,
   HEADER_WATCHLIST,
   HEADER_WATCHED,
-  HEADER_ADD,
+  HEADER_SEARCH,
 } from "../constants/lang";
+import { ROOT_PATH, WATCHED_PATH, SEARCH_PATH } from "../constants/routes";
 
 export const Header = () => {
   return (
@@ -18,16 +19,16 @@ export const Header = () => {
 
           <ul className="nav-links">
             <li>
-              <Link to="/">{HEADER_WATCHLIST}</Link>
+              <Link to={ROOT_PATH}>{HEADER_WATCHLIST}</Link>
             </li>
 
             <li>
-              <Link to="/watched">{HEADER_WATCHED}</Link>
+              <Link to={WATCHED_PATH}>{HEADER_WATCHED}</Link>
             </li>
 
             <li>
-              <Link to="/add" className="btn btn-main">
-                {HEADER_ADD}
+              <Link to={SEARCH_PATH} className="btn btn-main">
+                {HEADER_SEARCH}
               </Link>
             </li>
           </ul>

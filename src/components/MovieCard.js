@@ -1,5 +1,5 @@
 import React from "react";
-import { IMAGE_API_200 } from "../constants/urls";
+import { IMAGE_URL_200 } from "../constants/urls";
 import MovieControls from "./MovieControls";
 
 export const MovieCard = ({ movie, type }) => {
@@ -7,7 +7,7 @@ export const MovieCard = ({ movie, type }) => {
     <div className="movie-card">
       <div className="overlay"></div>
       {movie.poster_path ? (
-        <img src={IMAGE_API_200 + movie.poster_path} alt={movie.title} />
+        <img src={IMAGE_URL_200 + movie.poster_path} alt={movie.title} />
       ) : (
         <div className="filler-poster"></div>
       )}

@@ -1,7 +1,12 @@
 import React, { useContext } from "react";
-import { IMAGE_API_200 } from "../constants/urls";
+import { IMAGE_URL_200 } from "../constants/urls";
 import { GlobalContext } from "../context/GlobalState";
-import { ADD_WATCHLIST, ADD_WATCHED } from "../constants/lang";
+import {
+  ADD_WATCHLIST,
+  ADD_WATCHED,
+  ON_WATCHLIST,
+  ON_WATCHED,
+} from "../constants/lang";
 
 export const ResultCard = ({ movie }) => {
   const {
@@ -18,13 +23,19 @@ export const ResultCard = ({ movie }) => {
     : storedMovieWatched
     ? true
     : false;
+  const watchListText = storedMovie
+    ? ON_WATCHLIST
+    : storedMovieWatched
+    ? ON_WATCHLIST
+    : ADD_WATCHLIST;
   const watchedDisabled = storedMovieWatched ? true : false;
+  const watchedText = storedMovieWatched ? ON_WATCHED : ADD_WATCHED;
 
   return (
     <div className="result-card">
       <div className="poster-wrapper">
         {movie.poster_path ? (
-          <img src={IMAGE_API_200 + movie.poster_path} alt={movie.title} />
+          <img src={IMAGE_URL_200 + movie.poster_path} alt={movie.title} />
         ) : (
           <div className="filler-poster"></div>
         )}
@@ -44,7 +55,7 @@ export const ResultCard = ({ movie }) => {
               addMovieToWatchList(movie);
             }}
           >
-            {ADD_WATCHLIST}
+            {watchListText}
           </button>
           <button
             className="btn"
@@ -53,7 +64,7 @@ export const ResultCard = ({ movie }) => {
               addMovieToWatched(movie);
             }}
           >
-            {ADD_WATCHED}
+            {watchedText}
           </button>
         </div>
       </div>
