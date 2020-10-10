@@ -13,6 +13,7 @@ body {
 }
 
 .container {
+  top: 50px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -72,7 +73,8 @@ body {
 .fullWidth {
   width: 100% !important;
 }
-header {
+// header {
+.navbar {
   background-color: var(--primary);
   .inner-content {
     display: flex;
@@ -82,7 +84,7 @@ header {
   }
   a {
     color: var(--white);
-    font-size: 1.25rem;
+    // font-size: 1.25rem;
     text-decoration: none;
     transition: all 0.3s ease;
     &:hover {
@@ -182,7 +184,7 @@ header {
 
 .movie {
   &-page {
-    padding: 30px 0;
+    // padding: 30px 0;
     .header {
       display: flex;
       align-items: center;
@@ -258,8 +260,8 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    color: #c4c4c4;
+    // background-attachment: fixed;
+    color: #ffffff;
     .no-movies {
       color: #c4c4c4;
       font-size: 3rem;
@@ -292,9 +294,14 @@ header {
 }
 
 .details {
-  margin-top: 40vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(3, 37, 65, 0.7);
   padding: 30px;
+
+  @media (min-width: 992px) {
+    & {
+      margin-top: 40vh;
+    }
+  }
 }
 
 // .overlay {
@@ -307,3 +314,13 @@ header {
 //   left: 0px;
 //   background: rgba(0, 0, 0, 0.7); /*can be anything, of course*/
 // }
+.navbar-collapse {
+  justify-content: flex-end;
+}
+.add-page,
+.movie-page {
+  padding-top: 5em;
+}
+.badge {
+  margin-right: 0.8em;
+}

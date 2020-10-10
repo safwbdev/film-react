@@ -24,7 +24,7 @@ export default function MovieControls({ movie, type }) {
             <i className="fa fa-times"></i>
           </button>
           <Link to={`${MOVIE_PATH}/${movie.id}`} className="ctrl-btn">
-            <i class="fa fa-film" aria-hidden="true"></i>
+            <i className="fa fa-film" aria-hidden="true"></i>
           </Link>
         </>
       )}
@@ -40,6 +40,9 @@ export default function MovieControls({ movie, type }) {
           >
             <i className="fa fa-times"></i>
           </button>
+          <Link to={`${MOVIE_PATH}/${movie.id}`} className="ctrl-btn">
+            <i className="fa fa-film" aria-hidden="true"></i>
+          </Link>
         </>
       )}
     </div>

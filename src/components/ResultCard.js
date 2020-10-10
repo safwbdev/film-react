@@ -70,7 +70,9 @@ export const ResultCard = ({ movie }) => {
           >
             {watchedText}
           </button>
-          <Link to={MOVIE_PATH + `/${movie.id}`}>{VIEW_BUTTON}</Link>
+          <Link to={MOVIE_PATH + `/${movie.id}`} className="btn">
+            {VIEW_BUTTON}
+          </Link>
         </div>
       </div>
     </div>

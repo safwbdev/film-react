@@ -1,10 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FIND_URL } from "../constants/urls";
 import { IMAGE_URL_1280, MISSING_IMAGE } from "../constants/urls";
+import { GlobalContext } from "../context/GlobalState";
+import {
+  ON_WATCHED,
+  ADD_WATCHED,
+  ON_WATCHLIST,
+  ADD_WATCHLIST,
+} from "../constants/lang";
 
 export const Movie = (props) => {
   const [movie, setMovie] = useState();
   const movieUrl = FIND_URL(props.match.params.id);
+  const {
+    addMovieToWatchList,
+    watchList,
+    watched,
+    addMovieToWatched,
+  } = useContext(GlobalContext);
 
   useEffect(() => {
     loadData();
@@ -19,11 +32,25 @@ export const Movie = (props) => {
       });
   };
   if (movie) {
-    console.log(movie);
+    let storedMovie = watchList.find((data) => data.id === movie.id);
+    let storedMovieWatched = watched.find((data) => data.id === movie.id);
+    const watchListDisabled = storedMovie
+      ? true
+      : storedMovieWatched
+      ? true
+      : false;
+    const watchListText = storedMovie
+      ? ON_WATCHLIST
+      : storedMovieWatched
+      ? ON_WATCHLIST
+      : ADD_WATCHLIST;
+    const watchedDisabled = storedMovieWatched ? true : false;
+    const watchedText = storedMovieWatched ? ON_WATCHED : ADD_WATCHED;
 
     const bgImage = movie.backdrop_path
       ? IMAGE_URL_1280 + movie.backdrop_path
       : MISSING_IMAGE;
+
     return (
       <div
         className="movie-page "
@@ -54,11 +81,17 @@ export const Movie = (props) => {
                 ) : null}
                 <br />
                 <h5>Genres</h5>
-                <p>
-                  {movie.genres.map((data, index) => {
-                    return <span key={index}>{data.name}, </span>;
-                  })}
-                </p>
+
+                {movie.genres.map((data, index) => {
+                  return (
+                    <span key={index} className="badge badge-pill badge-light">
+                      {data.name}
+                    </span>
+                  );
+                })}
+                <br />
+                <br />
+
                 <h5>Sypnosis</h5>
                 <p>{movie.overview}</p>
                 <p>Runtime: {movie.runtime} minutes</p>
@@ -75,6 +108,27 @@ export const Movie = (props) => {
                     ? `$${movie.budget.toLocaleString("en-US")}`
                     : "NA"}
                 </p>
+
+                <div className="controls">
+                  <button
+                    className="btn"
+                    disabled={watchListDisabled}
+                    onClick={() => {
+                      addMovieToWatchList(movie);
+                    }}
+                  >
+                    {watchListText}
+                  </button>{" "}
+                  <button
+                    className="btn"
+                    disabled={watchedDisabled}
+                    onClick={() => {
+                      addMovieToWatched(movie);
+                    }}
+                  >
+                    {watchedText}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -85,7 +139,7 @@ export const Movie = (props) => {
     return (
       <div className="movie-page">
         <div className="container">
-          <h1>OOPS</h1>
+          <h1>Loading</h1>
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 export const SEARCH_PLACEHOLDER = "Search Movie";
-export const HEADER_TITLE = "WatchList";
+export const HEADER_TITLE = "Movie CheckList";
 export const HEADER_WATCHLIST = "Watch List";
 export const HEADER_WATCHED = "Watched";
 export const HEADER_SEARCH = "Search Movies";
