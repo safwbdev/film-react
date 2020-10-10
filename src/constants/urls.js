@@ -6,7 +6,7 @@ export const MISSING_IMAGE =
 export const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=`;
 export const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1`;
 export const FIND_URL = (id) => {
-  return `http://api.themoviedb.org/3/movie/${id}}?api_key=${API_KEY}`;
+  return `https://api.themoviedb.org/3/movie/${id}}?api_key=${API_KEY}`;
 };
 export const FIND_BY_GENRE_URL = (id) => {
   return `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${id}`;
