@@ -6,14 +6,19 @@ import {
   HEADER_WATCHED,
   HEADER_SEARCH,
 } from "../constants/lang";
-import { ROOT_PATH, WATCHED_PATH, SEARCH_PATH } from "../constants/routes";
+import {
+  ROOT_PATH,
+  WATCHED_PATH,
+  SEARCH_PATH,
+  WATCHLIST_PATH,
+} from "../constants/routes";
 
 export const Header = () => {
   return (
     <nav className="navbar fixed-top navbar-expand-lg ">
       <div className="container">
         <div className="brand">
-          <Link to="/">{HEADER_TITLE}</Link>
+          <Link to={ROOT_PATH}>{HEADER_TITLE}</Link>
         </div>
         <button
           className="navbar-toggler"
@@ -30,7 +35,7 @@ export const Header = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ">
             <li className="nav-item active">
-              <Link to={ROOT_PATH} className="nav-link">
+              <Link to={WATCHLIST_PATH} className="nav-link">
                 {HEADER_WATCHLIST}
               </Link>
             </li>

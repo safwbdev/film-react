@@ -319,8 +319,15 @@ body {
 }
 .add-page,
 .movie-page {
-  padding-top: 5em;
+  padding-top: 6em;
 }
 .badge {
   margin-right: 0.8em;
+}
+
+.home-page {
+  // height: 100vh;
+  padding-top: 6em;
+  background: var(--primary);
+  color: #ffffff;
 }

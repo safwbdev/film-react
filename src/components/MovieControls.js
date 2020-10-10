@@ -45,6 +45,14 @@ export default function MovieControls({ movie, type }) {
           </Link>
         </>
       )}
+
+      {type === "home" && (
+        <>
+          <Link to={`${MOVIE_PATH}/${movie.id}`} className="ctrl-btn">
+            <i className="fa fa-eye" aria-hidden="true"></i> View
+          </Link>
+        </>
+      )}
     </div>
   );
 }

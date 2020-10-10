@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import { MOVIE_PATH } from "../constants/routes";
 
 export const ResultCard = ({ movie }) => {
-  console.log(movie);
   const {
     addMovieToWatchList,
     watchList,
