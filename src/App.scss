@@ -69,7 +69,9 @@ body {
     outline: none;
   }
 }
-
+.fullWidth {
+  width: 100% !important;
+}
 header {
   background-color: var(--primary);
   .inner-content {
@@ -191,6 +193,12 @@ header {
       color: var(--primary);
       margin: 0;
     }
+    .score {
+      margin-left: 1em;
+    }
+    .tagline {
+      font-style: italic;
+    }
   }
   &-grid {
     display: grid;
@@ -246,6 +254,12 @@ header {
     }
   }
   &-page {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #c4c4c4;
     .no-movies {
       color: #c4c4c4;
       font-size: 3rem;
@@ -276,3 +290,20 @@ header {
   border-radius: 999px;
   color: var(--primary);
 }
+
+.details {
+  margin-top: 40vh;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+}
+
+// .overlay {
+//   // z-index: 1;
+//   height: 100%;
+//   width: 100%;
+//   position: fixed;
+//   overflow: auto;
+//   top: 0px;
+//   left: 0px;
+//   background: rgba(0, 0, 0, 0.7); /*can be anything, of course*/
+// }

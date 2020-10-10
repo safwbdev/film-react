@@ -12,3 +12,4 @@ export const MOVIE = "Movie";
 export const MOVIES = "Movies";
 export const ON_WATCHLIST = "On WatchList";
 export const ON_WATCHED = "Watched";
+export const VIEW_BUTTON = "View Details";

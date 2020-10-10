@@ -6,9 +6,13 @@ import {
   ADD_WATCHED,
   ON_WATCHLIST,
   ON_WATCHED,
+  VIEW_BUTTON,
 } from "../constants/lang";
+import { Link } from "react-router-dom";
+import { MOVIE_PATH } from "../constants/routes";
 
 export const ResultCard = ({ movie }) => {
+  console.log(movie);
   const {
     addMovieToWatchList,
     watchList,
@@ -66,6 +70,7 @@ export const ResultCard = ({ movie }) => {
           >
             {watchedText}
           </button>
+          <Link to={MOVIE_PATH + `/${movie.id}`}>{VIEW_BUTTON}</Link>
         </div>
       </div>
     </div>

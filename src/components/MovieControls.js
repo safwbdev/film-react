@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
+import { MOVIE_PATH } from "../constants/routes";
 
 export default function MovieControls({ movie, type }) {
   const {
@@ -21,6 +23,9 @@ export default function MovieControls({ movie, type }) {
           >
             <i className="fa fa-times"></i>
           </button>
+          <Link to={`${MOVIE_PATH}/${movie.id}`} className="ctrl-btn">
+            <i class="fa fa-film" aria-hidden="true"></i>
+          </Link>
         </>
       )}
 
