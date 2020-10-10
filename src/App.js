@@ -7,7 +7,7 @@ import { Watched } from "./components/Watched";
 import { Movie } from "./components/Movie";
 import { Search } from "./components/Search";
 import { GlobalProvider } from "./context/GlobalState";
-import { Home } from "./components/Home";
+import Home from "./components/Home";
 import {
   ROOT_PATH,
   WATCHED_PATH,

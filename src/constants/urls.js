@@ -8,3 +8,6 @@ export const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by
 export const FIND_URL = (id) => {
   return `http://api.themoviedb.org/3/movie/${id}}?api_key=${API_KEY}`;
 };
+export const FIND_BY_GENRE_URL = (id) => {
+  return `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${id}`;
+};

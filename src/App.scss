@@ -330,4 +330,16 @@ body {
   padding-top: 6em;
   background: var(--primary);
   color: #ffffff;
+
+  .slider-row {
+    margin-bottom: 2em;
+    .slick-slide {
+      padding: 10px;
+    }
+    .slick-dots {
+      button:before {
+        color: #ffffff;
+      }
+    }
+  }
 }
